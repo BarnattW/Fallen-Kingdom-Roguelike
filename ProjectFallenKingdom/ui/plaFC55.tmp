@@ -1,0 +1,122 @@
+[gd_scene load_steps=9 format=3 uid="uid://dl4wf4traisys"]
+
+[ext_resource type="Script" path="res://ProjectFallenKingdom/ui/player_ui.gd" id="1_cjwod"]
+[ext_resource type="Texture2D" uid="uid://clq5vj1iyrhss" path="res://ProjectFallenKingdom/abilities/dash/dash.jpg" id="2_utv0x"]
+[ext_resource type="Texture2D" uid="uid://bin3e5e5ikk81" path="res://ProjectFallenKingdom/abilities/dash/blank.jpg" id="3_sgkxe"]
+[ext_resource type="Script" path="res://ProjectFallenKingdom/ui/dash_progress_bar.gd" id="4_w1tk6"]
+[ext_resource type="Texture2D" uid="uid://6lqck38dao5o" path="res://ProjectFallenKingdom/abilities/sword_slash/slash1.png" id="5_86i2x"]
+[ext_resource type="Script" path="res://ProjectFallenKingdom/ui/ability_1_progress_bar.gd" id="5_omdte"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nj7se"]
+bg_color = Color(0.703174, 0.229045, 0.208214, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x6mdo"]
+bg_color = Color(0.264661, 0.640129, 0.406525, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="PlayerUI" type="CanvasLayer"]
+script = ExtResource("1_cjwod")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = 84.0
+offset_top = 101.0
+offset_right = 442.0
+offset_bottom = 142.0
+theme_override_styles/background = SubResource("StyleBoxFlat_nj7se")
+theme_override_styles/fill = SubResource("StyleBoxFlat_x6mdo")
+value = 100.0
+
+[node name="Score" type="CanvasLayer" parent="."]
+
+[node name="Score" type="Label" parent="Score"]
+unique_name_in_owner = true
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -317.0
+offset_top = 73.0
+offset_right = -125.0
+offset_bottom = 156.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 60
+text = "Score: "
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 1624.0
+offset_top = 1003.0
+offset_right = 1662.0
+offset_bottom = 1035.0
+texture_normal = ExtResource("2_utv0x")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="DashProgressBar" type="TextureProgressBar" parent="TextureButton"]
+layout_mode = 0
+offset_right = 38.0
+offset_bottom = 33.0
+step = 0.01
+fill_mode = 5
+texture_progress = ExtResource("3_sgkxe")
+tint_progress = Color(0.201527, 0.201527, 0.201527, 0.870588)
+script = ExtResource("4_w1tk6")
+
+[node name="TextureButton3" type="TextureButton" parent="."]
+offset_left = 1676.0
+offset_top = 999.0
+offset_right = 1719.0
+offset_bottom = 1044.0
+texture_normal = ExtResource("5_86i2x")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Ability1ProgressBar" type="TextureProgressBar" parent="TextureButton3"]
+layout_mode = 0
+offset_right = 43.0
+offset_bottom = 43.0
+step = 0.01
+fill_mode = 5
+texture_progress = ExtResource("3_sgkxe")
+tint_progress = Color(0.201527, 0.201527, 0.201527, 0.870588)
+script = ExtResource("5_omdte")
+
+[node name="TIme" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 2.35714
+anchor_top = -4.59259
+anchor_right = 2.35714
+anchor_bottom = -4.59259
+offset_left = -3642.71
+offset_top = 5051.0
+offset_right = -3450.71
+offset_bottom = 5134.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 60
+text = "Time: "
+metadata/_edit_use_anchors_ = true
+
+[node name="Level" type="Label" parent="."]
+unique_name_in_owner = true
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1463.0
+offset_top = 94.0
+offset_right = -1400.0
+offset_bottom = 149.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "1
+"
+
+[node name="ExpProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = 88.0
+offset_top = 142.0
+offset_right = 438.0
+offset_bottom = 169.0
+max_value = 1.0

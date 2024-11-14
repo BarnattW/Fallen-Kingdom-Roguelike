@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://vvuu20lqul3v"]
+
+[ext_resource type="Script" path="res://ProjectFallenKingdom/abilities/crescent_strike/crescent_strike.gd" id="1_sjn2t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_igsob"]
+radius = 898.02
+
+[node name="CrescentStrike" type="Area2D"]
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("1_sjn2t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_igsob")
+
+[node name="CresentCooldownTimer" type="Timer" parent="."]
+unique_name_in_owner = true

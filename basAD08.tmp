@@ -1,0 +1,95 @@
+[gd_scene load_steps=5 format=3 uid="uid://ri6nwrsik5n"]
+
+[ext_resource type="PackedScene" uid="uid://bd5kqsqm01i1w" path="res://player_scarlet/player_scarlet.tscn" id="1_a51br"]
+[ext_resource type="Script" path="res://base_level.gd" id="1_triiw"]
+[ext_resource type="PackedScene" uid="uid://cqsq14m7ix8xh" path="res://pine_tree.tscn" id="2_wdy26"]
+
+[sub_resource type="Curve2D" id="Curve2D_dc06m"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -201, -84, 0, 0, 0, 0, 2139, -84, 0, 0, 0, 0, 2135, 1200, 0, 0, 0, 0, -197, 1200, 0, 0, 0, 0, -205, -76)
+}
+point_count = 5
+
+[node name="Base Level" type="Node2D"]
+script = ExtResource("1_triiw")
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+offset_right = 1925.0
+offset_bottom = 1092.0
+
+[node name="Player" parent="." instance=ExtResource("1_a51br")]
+position = Vector2(928, 680)
+
+[node name="Path2D" type="Path2D" parent="Player"]
+curve = SubResource("Curve2D_dc06m")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D"]
+unique_name_in_owner = true
+position = Vector2(-201, -84)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("2_wdy26")]
+position = Vector2(301, 260)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("2_wdy26")]
+position = Vector2(1434, 173)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("2_wdy26")]
+position = Vector2(506, 788)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("2_wdy26")]
+position = Vector2(1377, 909)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
+[node name="GameOver" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="GameOver"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.533333)
+
+[node name="Label" type="Label" parent="GameOver/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+text = "Game Over"
+metadata/_edit_use_anchors_ = true
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Score" type="Label" parent="UI"]
+unique_name_in_owner = true
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -296.0
+offset_top = 96.0
+offset_right = -104.0
+offset_bottom = 179.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Score: "
+
+[connection signal="health_depleted" from="Player" to="." method="_on_player_2_health_depleted"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

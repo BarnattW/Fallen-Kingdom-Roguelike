@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgqaeu62tlkuo"]
+
+[ext_resource type="Texture2D" uid="uid://codqru3mys7c8" path="res://ProjectFallenKingdom/abilities/sword_slash/pixil-frame-0.png" id="2_c2cl0"]
+
+[sub_resource type="GDScript" id="GDScript_0iw6c"]
+script/source = "class_name SwordSlash extends Attack
+
+@export var SPEED : float = 1000
+@export var RANGE : float = 1200
+var travelled_distance : float = 0
+#attack_name = \"sword_slash\"
+
+func _physics_process(delta: float) -> void: 
+	var direction = Vector2.RIGHT.rotated(rotation); # get current bullet direction
+	position += direction * SPEED * delta;
+	
+	travelled_distance += SPEED * delta;
+	if travelled_distance > RANGE:
+		queue_free();
+
+func _on_body_entered(body: Node2D) -> void:
+	queue_free();
+	if body.has_method(\"take_damage\"):
+		body.take_damage();
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oa7ux"]
+radius = 41.0
+height = 110.0
+
+[node name="sword_slash" type="Area2D"]
+top_level = true
+collision_layer = 0
+collision_mask = 3
+script = SubResource("GDScript_0iw6c")
+SPEED = null
+RANGE = null
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_c2cl0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -4)
+shape = SubResource("CapsuleShape2D_oa7ux")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

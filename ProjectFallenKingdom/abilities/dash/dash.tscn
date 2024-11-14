@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://pbikia826fpr"]
+
+[ext_resource type="Script" path="res://ProjectFallenKingdom/abilities/dash/dash.gd" id="1_8oh28"]
+
+[node name="Dash" type="Node2D"]
+script = ExtResource("1_8oh28")
+
+[node name="DashDurationTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="DashCooldownTimer" type="Timer" parent="."]
+one_shot = true

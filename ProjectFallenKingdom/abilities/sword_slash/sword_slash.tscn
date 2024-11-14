@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgqaeu62tlkuo"]
+
+[ext_resource type="Script" path="res://ProjectFallenKingdom/abilities/sword_slash/sword_slash.gd" id="1_2ism7"]
+[ext_resource type="AudioStream" uid="uid://duu7ap4wjsfug" path="res://ProjectFallenKingdom/abilities/sword_slash/sword-sound-2-36274.mp3" id="2_h7flh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_igsob"]
+radius = 898.02
+
+[node name="SwordSlash" type="Area2D"]
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("1_2ism7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_igsob")
+
+[node name="SlashSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_h7flh")

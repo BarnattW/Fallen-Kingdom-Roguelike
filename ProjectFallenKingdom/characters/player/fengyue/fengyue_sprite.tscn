@@ -1,0 +1,215 @@
+[gd_scene load_steps=51 format=3 uid="uid://bsnev6jsrtj2v"]
+
+[ext_resource type="Script" path="res://ProjectFallenKingdom/characters/player/fengyue/fengyue_sprite.gd" id="1_2q2fb"]
+[ext_resource type="Texture2D" uid="uid://gojo0ggtegu1" path="res://ProjectFallenKingdom/characters/player/fengyue/idle/0001.png" id="2_76h8w"]
+[ext_resource type="Texture2D" uid="uid://ddmee7hane1da" path="res://ProjectFallenKingdom/characters/player/fengyue/idle/0002.png" id="3_r63xl"]
+[ext_resource type="Texture2D" uid="uid://bjjko5lar5n7v" path="res://ProjectFallenKingdom/characters/player/fengyue/idle/0003.png" id="4_pifm3"]
+[ext_resource type="Texture2D" uid="uid://bpsbsvhen1g6u" path="res://ProjectFallenKingdom/characters/player/fengyue/idle/0004.png" id="5_fehep"]
+[ext_resource type="Texture2D" uid="uid://cy4re7br2opt5" path="res://ProjectFallenKingdom/characters/player/fengyue/idle/0005.png" id="6_67bsr"]
+[ext_resource type="Texture2D" uid="uid://bmqg5p2xlg87" path="res://ProjectFallenKingdom/characters/player/fengyue/idle/0006.png" id="7_tlbc8"]
+[ext_resource type="Texture2D" uid="uid://cc8kl2hiln6xa" path="res://ProjectFallenKingdom/characters/player/fengyue/idle/0007.png" id="8_g8q54"]
+[ext_resource type="Texture2D" uid="uid://dwylbanfp5ibt" path="res://ProjectFallenKingdom/characters/player/fengyue/idle/0008.png" id="9_ukct3"]
+[ext_resource type="Texture2D" uid="uid://d07i3u2pvsyt2" path="res://ProjectFallenKingdom/characters/player/fengyue/idle/0009.png" id="10_mepwk"]
+[ext_resource type="Texture2D" uid="uid://b7btijn10gk7y" path="res://ProjectFallenKingdom/characters/player/fengyue/idle/0010.png" id="11_lm0cm"]
+[ext_resource type="Texture2D" uid="uid://chiuuar2ln43f" path="res://ProjectFallenKingdom/characters/player/fengyue/idle/0011.png" id="12_8k5qd"]
+[ext_resource type="Texture2D" uid="uid://bpuqg3to65dxm" path="res://ProjectFallenKingdom/characters/player/fengyue/idle/0012.png" id="13_kcfof"]
+[ext_resource type="Texture2D" uid="uid://c1po1b4tkxx2p" path="res://ProjectFallenKingdom/characters/player/fengyue/idle/0013.png" id="14_3dgmb"]
+[ext_resource type="Texture2D" uid="uid://ckr8673km2tsd" path="res://ProjectFallenKingdom/characters/player/fengyue/idle/0014.png" id="15_htvai"]
+[ext_resource type="Texture2D" uid="uid://qya6n1bx03sv" path="res://ProjectFallenKingdom/characters/player/fengyue/idle/0015.png" id="16_m0g8a"]
+[ext_resource type="Texture2D" uid="uid://dyj7bmtjvj1uq" path="res://ProjectFallenKingdom/characters/player/fengyue/idle/0016.png" id="17_w6gjc"]
+[ext_resource type="Texture2D" uid="uid://cfto8hgjuyle2" path="res://ProjectFallenKingdom/characters/player/fengyue/idle/0017.png" id="18_io7jb"]
+[ext_resource type="Texture2D" uid="uid://b7ggjuirn5i5t" path="res://ProjectFallenKingdom/characters/player/fengyue/idle/0018.png" id="19_ix74u"]
+[ext_resource type="Texture2D" uid="uid://bo2qurebng265" path="res://ProjectFallenKingdom/characters/player/fengyue/idle/0019.png" id="20_yo7nw"]
+[ext_resource type="Texture2D" uid="uid://cd5jkpll0j4m5" path="res://ProjectFallenKingdom/characters/player/fengyue/idle/0020.png" id="21_8yrf6"]
+[ext_resource type="Texture2D" uid="uid://dmd7ab2ii2qgy" path="res://ProjectFallenKingdom/characters/player/fengyue/idle/0021.png" id="22_i68qy"]
+[ext_resource type="Texture2D" uid="uid://bkyqaqab75ans" path="res://ProjectFallenKingdom/characters/player/fengyue/idle/0022.png" id="23_26wx1"]
+[ext_resource type="Texture2D" uid="uid://cyosw8to4yelv" path="res://ProjectFallenKingdom/characters/player/fengyue/idle/0023.png" id="24_5bqid"]
+[ext_resource type="Texture2D" uid="uid://ndj4kd8bsdbu" path="res://ProjectFallenKingdom/characters/player/fengyue/idle/0024.png" id="25_nt8u3"]
+[ext_resource type="Texture2D" uid="uid://dp3fcl4ru3580" path="res://ProjectFallenKingdom/characters/player/fengyue/running/0001.png" id="26_q6rso"]
+[ext_resource type="Texture2D" uid="uid://dflnifdrk6fu7" path="res://ProjectFallenKingdom/characters/player/fengyue/running/0002.png" id="27_olno5"]
+[ext_resource type="Texture2D" uid="uid://cloat3gcq715q" path="res://ProjectFallenKingdom/characters/player/fengyue/running/0003.png" id="28_trtcx"]
+[ext_resource type="Texture2D" uid="uid://bbqui8ss8e0hr" path="res://ProjectFallenKingdom/characters/player/fengyue/running/0004.png" id="29_bxnhf"]
+[ext_resource type="Texture2D" uid="uid://ddyslnqjm6moo" path="res://ProjectFallenKingdom/characters/player/fengyue/running/0005.png" id="30_s1rns"]
+[ext_resource type="Texture2D" uid="uid://v6oehdiu852l" path="res://ProjectFallenKingdom/characters/player/fengyue/running/0006.png" id="31_2paet"]
+[ext_resource type="Texture2D" uid="uid://ds3f4mn0j5y7w" path="res://ProjectFallenKingdom/characters/player/fengyue/running/0007.png" id="32_6mc57"]
+[ext_resource type="Texture2D" uid="uid://bohanmakkhbbv" path="res://ProjectFallenKingdom/characters/player/fengyue/running/0008.png" id="33_7aeth"]
+[ext_resource type="Texture2D" uid="uid://gmh22jfylcc8" path="res://ProjectFallenKingdom/characters/player/fengyue/running/0009.png" id="34_umfi2"]
+[ext_resource type="Texture2D" uid="uid://bm6f4cqvqwqv6" path="res://ProjectFallenKingdom/characters/player/fengyue/running/0010.png" id="35_cnuww"]
+[ext_resource type="Texture2D" uid="uid://x734vn3cu758" path="res://ProjectFallenKingdom/characters/player/fengyue/running/0011.png" id="36_8nvho"]
+[ext_resource type="Texture2D" uid="uid://b6mot3ab2qrut" path="res://ProjectFallenKingdom/characters/player/fengyue/running/0012.png" id="37_iy3se"]
+[ext_resource type="Texture2D" uid="uid://dnlxl8yl0w5se" path="res://ProjectFallenKingdom/characters/player/fengyue/running/0013.png" id="38_puy5i"]
+[ext_resource type="Texture2D" uid="uid://chndon4yq1sbu" path="res://ProjectFallenKingdom/characters/player/fengyue/running/0014.png" id="39_lkykr"]
+[ext_resource type="Texture2D" uid="uid://da5pg1v8a5ma6" path="res://ProjectFallenKingdom/characters/player/fengyue/running/0015.png" id="40_814ko"]
+[ext_resource type="Texture2D" uid="uid://dokquq2np5y0m" path="res://ProjectFallenKingdom/characters/player/fengyue/running/0016.png" id="41_6p8hl"]
+[ext_resource type="Texture2D" uid="uid://vbpoxvvtatl8" path="res://ProjectFallenKingdom/characters/player/fengyue/running/0017.png" id="42_q4udh"]
+[ext_resource type="Texture2D" uid="uid://c4pltvn8pq54k" path="res://ProjectFallenKingdom/characters/player/fengyue/running/0018.png" id="43_4aiw1"]
+[ext_resource type="Texture2D" uid="uid://ktl04gj7oayt" path="res://ProjectFallenKingdom/characters/player/fengyue/running/0019.png" id="44_5dk1q"]
+[ext_resource type="Texture2D" uid="uid://bdc67kqr325jt" path="res://ProjectFallenKingdom/characters/player/fengyue/running/0020.png" id="45_fxciw"]
+[ext_resource type="Texture2D" uid="uid://bs4l08r46i5yl" path="res://ProjectFallenKingdom/characters/player/fengyue/running/0021.png" id="46_igril"]
+[ext_resource type="Texture2D" uid="uid://b1o707e0ao23c" path="res://ProjectFallenKingdom/characters/player/fengyue/running/0022.png" id="47_y5q1a"]
+[ext_resource type="Texture2D" uid="uid://ci2ibpf4bmru8" path="res://ProjectFallenKingdom/characters/player/fengyue/running/0023.png" id="48_kmp6i"]
+[ext_resource type="Texture2D" uid="uid://d1n7q25p34mhe" path="res://ProjectFallenKingdom/characters/player/fengyue/running/0024.png" id="49_cy4ac"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f7y1t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_76h8w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_r63xl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pifm3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fehep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_67bsr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_tlbc8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_g8q54")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ukct3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_mepwk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_lm0cm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_8k5qd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_kcfof")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_3dgmb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_htvai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_m0g8a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_w6gjc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_io7jb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ix74u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_yo7nw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_8yrf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_i68qy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_26wx1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_5bqid")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_nt8u3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_q6rso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_olno5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_trtcx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_bxnhf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_s1rns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_2paet")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_6mc57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_7aeth")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_umfi2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_cnuww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_8nvho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_iy3se")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_puy5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_lkykr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_814ko")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_6p8hl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_q4udh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_4aiw1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_5dk1q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_fxciw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_igril")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_y5q1a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_kmp6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_cy4ac")
+}],
+"loop": true,
+"name": &"running",
+"speed": 32.0
+}]
+
+[node name="fengyue_sprite" type="Node2D"]
+script = ExtResource("1_2q2fb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_f7y1t")
+animation = &"running"

@@ -1,0 +1,93 @@
+[gd_scene load_steps=6 format=3 uid="uid://ri6nwrsik5n"]
+
+[ext_resource type="Script" path="res://ProjectFallenKingdom/scenes/base_level.gd" id="1_triiw"]
+[ext_resource type="PackedScene" uid="uid://b1nvsond6tdnt" path="res://ProjectFallenKingdom/characters/player/player_fengyue.tscn" id="2_p55ry"]
+[ext_resource type="PackedScene" uid="uid://cqsq14m7ix8xh" path="res://ProjectFallenKingdom/environment/pine_tree.tscn" id="2_wdy26"]
+[ext_resource type="PackedScene" uid="uid://dl4wf4traisys" path="res://ProjectFallenKingdom/ui/player_ui.tscn" id="4_2hg4k"]
+
+[sub_resource type="Curve2D" id="Curve2D_dc06m"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -2352.48, 1361.74, 0, 0, 0, 0, -2328.42, -1185.15, 0, 0, 0, 0, -45.153, -1195.6, 0, 0, 0, 0, 2278.21, -1143.19, 0, 0, 0, 0, 2278.21, 1312.44, 0, 0, 0, 0, -45.1532, 1355.58, 0, 0, 0, 0, -2352.48, 1361.74)
+}
+point_count = 7
+
+[node name="Base Level" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_triiw")
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+offset_right = 1925.0
+offset_bottom = 1092.0
+color = Color(0.372549, 0.462745, 0.176471, 1)
+
+[node name="Player" parent="." instance=ExtResource("2_p55ry")]
+position = Vector2(956, 542)
+
+[node name="Path2D" type="Path2D" parent="Player"]
+position = Vector2(76.5244, -27.9878)
+scale = Vector2(0.498846, 0.486869)
+curve = SubResource("Curve2D_dc06m")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D"]
+unique_name_in_owner = true
+position = Vector2(-2352.48, 1361.74)
+rotation = -1.56135
+
+[node name="StaticBody2D" parent="." instance=ExtResource("2_wdy26")]
+position = Vector2(301, 260)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("2_wdy26")]
+position = Vector2(1377, 909)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
+[node name="GameOver" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="GameOver"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.533333)
+
+[node name="Label" type="Label" parent="GameOver/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+text = "Game Over"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="GameOver"]
+process_mode = 3
+offset_left = 578.0
+offset_top = 624.0
+offset_right = 1322.0
+offset_bottom = 758.0
+text = "Replay"
+
+[node name="PlayerUi" parent="." instance=ExtResource("4_2hg4k")]
+
+[connection signal="exp_changed" from="Player" to="PlayerUi" method="_on_player_exp_changed"]
+[connection signal="health_changed" from="Player" to="PlayerUi" method="_on_player_health_changed"]
+[connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
+[connection signal="leveled_up" from="Player" to="PlayerUi" method="_on_player_leveled_up"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="button_down" from="GameOver/Button" to="." method="_on_button_button_down"]

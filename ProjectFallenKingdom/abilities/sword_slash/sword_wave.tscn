@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://om5jck1avaae"]
+
+[ext_resource type="Script" path="res://ProjectFallenKingdom/abilities/sword_slash/sword_wave.gd" id="1_c4nk5"]
+[ext_resource type="Texture2D" uid="uid://6lqck38dao5o" path="res://ProjectFallenKingdom/abilities/sword_slash/slash1.png" id="2_mdv0c"]
+[ext_resource type="Texture2D" uid="uid://bnabho6e616fi" path="res://ProjectFallenKingdom/abilities/sword_slash/slash2.png" id="3_cixro"]
+[ext_resource type="Texture2D" uid="uid://dd1jb6gpy6trv" path="res://ProjectFallenKingdom/abilities/sword_slash/slash3.png" id="4_k63kk"]
+[ext_resource type="Script" path="res://ProjectFallenKingdom/abilities/sword_slash/animated_sprite_2d.gd" id="5_mvdmj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xrkj4"]
+radius = 129.0
+height = 284.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ygjc5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mdv0c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cixro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cixro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_k63kk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_k63kk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_k63kk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_k63kk")
+}],
+"loop": false,
+"name": &"slash",
+"speed": 24.0
+}]
+
+[node name="SwordWave" type="Area2D"]
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("1_c4nk5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-20, 2)
+shape = SubResource("CapsuleShape2D_xrkj4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = -1.5708
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_ygjc5")
+animation = &"slash"
+frame = 1
+frame_progress = 0.714737
+script = ExtResource("5_mvdmj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckv26jh6yw1l2"]
+
+[ext_resource type="Texture2D" uid="uid://dq6lhtavj67fi" path="res://ProjectFallenKingdom/environment/rock.png" id="2_0olum"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ejg73"]
+radius = 24.0
+height = 90.0
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_0olum")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 24)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ejg73")

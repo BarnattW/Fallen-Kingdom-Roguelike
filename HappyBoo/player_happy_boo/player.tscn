@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://srkqav2u0lg5"]
+
+[ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://HappyBoo/characters/happy_boo/happy_boo.tscn" id="1_h6r47"]
+[ext_resource type="Script" path="res://HappyBoo/player_happy_boo/player.gd" id="1_ta2xq"]
+[ext_resource type="PackedScene" uid="uid://uv4mfk8h4wrn" path="res://HappyBoo/gun/gun.tscn" id="3_tyadd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q6jyn"]
+radius = 31.257
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8s2ds"]
+radius = 38.0132
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nci30"]
+bg_color = Color(0.176424, 0.327526, 0.22765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8wsa0"]
+bg_color = Color(0.202325, 0.417098, 0.261176, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Player" type="CharacterBody2D"]
+platform_floor_layers = 4294967294
+script = ExtResource("1_ta2xq")
+
+[node name="HappyBoo" parent="." instance=ExtResource("1_h6r47")]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -9)
+shape = SubResource("CircleShape2D_q6jyn")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Gun" parent="." instance=ExtResource("3_tyadd")]
+
+[node name="HurtBox" type="Area2D" parent="."]
+unique_name_in_owner = true
+light_mask = 0
+visibility_layer = 0
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(-1, -8)
+shape = SubResource("CircleShape2D_8s2ds")
+debug_color = Color(0.897169, 0.248576, 0.50145, 0.42)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -71.0
+offset_top = -140.0
+offset_right = 72.0
+offset_bottom = -113.0
+theme_override_styles/background = SubResource("StyleBoxFlat_nci30")
+theme_override_styles/fill = SubResource("StyleBoxFlat_8wsa0")
+value = 100.0

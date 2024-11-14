@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://duhb8rvn34gbp"]
+
+[ext_resource type="Script" path="res://ProjectFallenKingdom/abilities/magic_circle/magic_circle.gd" id="1_lxcpc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j0km1"]
+
+[node name="MagicCircle" type="Area2D"]
+script = ExtResource("1_lxcpc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_j0km1")
