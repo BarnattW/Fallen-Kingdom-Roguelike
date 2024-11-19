@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://6lqck38dao5o" path="res://ProjectFallenKingdom/abilities/sword_slash/slash1.png" id="2_mdv0c"]
 [ext_resource type="Texture2D" uid="uid://bnabho6e616fi" path="res://ProjectFallenKingdom/abilities/sword_slash/slash2.png" id="3_cixro"]
 [ext_resource type="Texture2D" uid="uid://dd1jb6gpy6trv" path="res://ProjectFallenKingdom/abilities/sword_slash/slash3.png" id="4_k63kk"]
-[ext_resource type="Script" path="res://ProjectFallenKingdom/abilities/sword_slash/animated_sprite_2d.gd" id="5_mvdmj"]
+[ext_resource type="Script" path="res://ProjectFallenKingdom/abilities/sword_slash/sword_wave_anim.gd" id="5_mvdmj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xrkj4"]
 radius = 129.0
@@ -48,7 +48,7 @@ script = ExtResource("1_c4nk5")
 position = Vector2(-20, 2)
 shape = SubResource("CapsuleShape2D_xrkj4")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="SwordWaveSprite" type="AnimatedSprite2D" parent="."]
 rotation = -1.5708
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_ygjc5")

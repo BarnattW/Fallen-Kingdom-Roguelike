@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ce0u8ml4osbax"]
+
+[ext_resource type="Script" path="res://ProjectFallenKingdom/abilities/pickup_radius/pickup_radius.gd" id="1_bympb"]
+
+[node name="PickupRadius" type="Node2D"]
+script = ExtResource("1_bympb")

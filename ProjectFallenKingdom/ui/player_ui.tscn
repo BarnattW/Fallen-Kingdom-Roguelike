@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dl4wf4traisys"]
+[gd_scene load_steps=11 format=3 uid="uid://dl4wf4traisys"]
 
 [ext_resource type="Script" path="res://ProjectFallenKingdom/ui/player_ui.gd" id="1_cjwod"]
 [ext_resource type="Texture2D" uid="uid://clq5vj1iyrhss" path="res://ProjectFallenKingdom/abilities/dash/dash.jpg" id="2_utv0x"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://ProjectFallenKingdom/ui/dash_progress_bar.gd" id="4_w1tk6"]
 [ext_resource type="Texture2D" uid="uid://6lqck38dao5o" path="res://ProjectFallenKingdom/abilities/sword_slash/slash1.png" id="5_86i2x"]
 [ext_resource type="Script" path="res://ProjectFallenKingdom/ui/ability_1_progress_bar.gd" id="5_omdte"]
+[ext_resource type="Texture2D" uid="uid://kpby8bmjq7gj" path="res://ProjectFallenKingdom/ui/face.png" id="7_e5edm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nj7se"]
 bg_color = Color(0.703174, 0.229045, 0.208214, 1)
@@ -17,18 +18,45 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mlmf2"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+
 [node name="PlayerUI" type="CanvasLayer"]
 script = ExtResource("1_cjwod")
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 unique_name_in_owner = true
-offset_left = 84.0
+offset_left = 144.0
 offset_top = 101.0
-offset_right = 442.0
+offset_right = 504.0
 offset_bottom = 142.0
 theme_override_styles/background = SubResource("StyleBoxFlat_nj7se")
 theme_override_styles/fill = SubResource("StyleBoxFlat_x6mdo")
 value = 100.0
+show_percentage = false
+
+[node name="Health" type="Label" parent="HealthBar"]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "100/100"
 
 [node name="Score" type="CanvasLayer" parent="."]
 
@@ -42,15 +70,15 @@ offset_top = 73.0
 offset_right = -125.0
 offset_bottom = 156.0
 grow_horizontal = 0
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 40
 text = "Score: "
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureButton" type="TextureButton" parent="."]
-offset_left = 1624.0
-offset_top = 1003.0
-offset_right = 1662.0
-offset_bottom = 1035.0
+offset_left = 1625.0
+offset_top = 953.0
+offset_right = 1663.0
+offset_bottom = 985.0
 texture_normal = ExtResource("2_utv0x")
 ignore_texture_size = true
 stretch_mode = 0
@@ -67,9 +95,9 @@ script = ExtResource("4_w1tk6")
 
 [node name="TextureButton3" type="TextureButton" parent="."]
 offset_left = 1676.0
-offset_top = 999.0
+offset_top = 945.0
 offset_right = 1719.0
-offset_bottom = 1044.0
+offset_bottom = 990.0
 texture_normal = ExtResource("5_86i2x")
 ignore_texture_size = true
 stretch_mode = 0
@@ -91,12 +119,12 @@ anchor_left = 2.35714
 anchor_top = -4.59259
 anchor_right = 2.35714
 anchor_bottom = -4.59259
-offset_left = -3642.71
-offset_top = 5051.0
-offset_right = -3450.71
-offset_bottom = 5134.0
+offset_left = -3688.71
+offset_top = 4680.59
+offset_right = -3496.71
+offset_bottom = 4763.59
 grow_horizontal = 0
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 40
 text = "Time: "
 metadata/_edit_use_anchors_ = true
 
@@ -105,10 +133,10 @@ unique_name_in_owner = true
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -1463.0
-offset_top = 94.0
-offset_right = -1400.0
-offset_bottom = 149.0
+offset_left = -1386.0
+offset_top = 102.0
+offset_right = -1323.0
+offset_bottom = 157.0
 grow_horizontal = 0
 theme_override_font_sizes/font_size = 40
 text = "1
@@ -116,8 +144,23 @@ text = "1
 
 [node name="ExpProgressBar" type="ProgressBar" parent="."]
 unique_name_in_owner = true
-offset_left = 88.0
+offset_left = 144.0
 offset_top = 142.0
-offset_right = 438.0
+offset_right = 504.0
 offset_bottom = 169.0
 max_value = 1.0
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(50, 50)
+offset_left = 80.0
+offset_top = 101.0
+offset_right = 146.0
+offset_bottom = 168.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mlmf2")
+
+[node name="ItemIcon" type="TextureRect" parent="PanelContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("7_e5edm")
+expand_mode = 1

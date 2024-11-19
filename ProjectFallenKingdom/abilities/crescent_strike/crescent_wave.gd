@@ -1,7 +1,16 @@
 class_name CrescentWave extends Projectile
 
 func _ready():
-	DAMAGE = 2  # Overriding the DAMAGE value from the parent class
+	DAMAGE = 1
+	RANGE = 800
+	match level:
+		1: 
+			pass
+		2:
+			pass
+		3:
+			RANGE = 1000
+			SPEED = 1200
 
 func _on_body_entered(body: Node2D) -> void:
 	#queue_free();

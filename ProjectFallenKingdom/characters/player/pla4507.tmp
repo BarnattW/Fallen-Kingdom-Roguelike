@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1nvsond6tdnt"]
+
+[ext_resource type="Script" path="res://ProjectFallenKingdom/characters/player/player_fengyue.gd" id="1_aapkg"]
+[ext_resource type="PackedScene" uid="uid://bsnev6jsrtj2v" path="res://ProjectFallenKingdom/characters/player/fengyue/fengyue_sprite.tscn" id="2_bt3pp"]
+[ext_resource type="PackedScene" uid="uid://cqwttkhsenriu" path="res://ProjectFallenKingdom/ui/level_up_ui.tscn" id="3_4qdh4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kgfai"]
+radius = 28.0179
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mvoob"]
+radius = 28.556
+height = 95.1867
+
+[node name="Player" type="CharacterBody2D"]
+platform_floor_layers = 4294967294
+script = ExtResource("1_aapkg")
+health = null
+speed = null
+attack_speed = null
+
+[node name="fengyue_sprite" parent="." instance=ExtResource("2_bt3pp")]
+unique_name_in_owner = true
+scale = Vector2(0.15, 0.15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8, 62)
+shape = SubResource("CircleShape2D_kgfai")
+
+[node name="HurtBox" type="Area2D" parent="."]
+unique_name_in_owner = true
+light_mask = 0
+visibility_layer = 0
+scale = Vector2(4.24078, 2.81569)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(-1.41483, 12.4303)
+scale = Vector2(0.235806, 0.410423)
+shape = SubResource("CapsuleShape2D_mvoob")
+debug_color = Color(0.763216, 0.367188, 0.675082, 0.42)
+
+[node name="attack_timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="LevelUpUi" parent="." instance=ExtResource("3_4qdh4")]
+offset_left = -959.0
+offset_top = -543.0
+offset_right = -959.0
+offset_bottom = -543.0
+
+[connection signal="timeout" from="attack_timer" to="." method="_on_attack_timer_timeout"]

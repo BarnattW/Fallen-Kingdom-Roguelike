@@ -7,7 +7,7 @@ radius = 898.02
 
 [node name="CrescentStrike" type="Area2D"]
 collision_layer = 0
-collision_mask = 3
+collision_mask = 2
 script = ExtResource("1_sjn2t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -15,3 +15,5 @@ shape = SubResource("CircleShape2D_igsob")
 
 [node name="CresentCooldownTimer" type="Timer" parent="."]
 unique_name_in_owner = true
+
+[connection signal="timeout" from="CresentCooldownTimer" to="." method="_on_cresent_cooldown_timer_timeout"]

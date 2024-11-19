@@ -1,14 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1nvsond6tdnt"]
+[gd_scene load_steps=8 format=3 uid="uid://b1nvsond6tdnt"]
 
 [ext_resource type="Script" path="res://ProjectFallenKingdom/characters/player/player_fengyue.gd" id="1_aapkg"]
 [ext_resource type="PackedScene" uid="uid://bsnev6jsrtj2v" path="res://ProjectFallenKingdom/characters/player/fengyue/fengyue_sprite.tscn" id="2_bt3pp"]
+[ext_resource type="PackedScene" uid="uid://cqwttkhsenriu" path="res://ProjectFallenKingdom/ui/upgrade_ui/upgrade_ui.tscn" id="3_4qdh4"]
+[ext_resource type="AudioStream" uid="uid://iuet88uxaly3" path="res://ProjectFallenKingdom/sfx/hitHurt.wav" id="4_iee6s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kgfai"]
 radius = 28.0179
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mvoob"]
 radius = 28.556
-height = 124.608
+height = 95.1867
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wvgjk"]
+radius = 80.0
 
 [node name="Player" type="CharacterBody2D"]
 platform_floor_layers = 4294967294
@@ -19,7 +24,7 @@ unique_name_in_owner = true
 scale = Vector2(0.15, 0.15)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-8, 62)
+position = Vector2(0, 62)
 shape = SubResource("CircleShape2D_kgfai")
 
 [node name="HurtBox" type="Area2D" parent="."]
@@ -31,13 +36,34 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, 12.43)
 scale = Vector2(0.235806, 0.410423)
 shape = SubResource("CapsuleShape2D_mvoob")
-debug_color = Color(0.763216, 0.367188, 0.675082, 0.42)
+debug_color = Color(0.764706, 0.368627, 0.67451, 1)
 
-[node name="attack_timer" type="Timer" parent="."]
-autostart = true
+[node name="DamageTimer" type="Timer" parent="HurtBox"]
+unique_name_in_owner = true
+wait_time = 0.5
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[connection signal="timeout" from="attack_timer" to="." method="_on_attack_timer_timeout"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UpgradeUI" parent="CanvasLayer" instance=ExtResource("3_4qdh4")]
+unique_name_in_owner = true
+
+[node name="PickupArea" type="Area2D" parent="."]
+collision_layer = 12
+collision_mask = 12
+
+[node name="PickupRadius" type="CollisionShape2D" parent="PickupArea"]
+unique_name_in_owner = true
+position = Vector2(0, 25)
+shape = SubResource("CircleShape2D_wvgjk")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_iee6s")
+
+[connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]
+[connection signal="body_exited" from="HurtBox" to="." method="_on_hurt_box_body_exited"]
+[connection signal="timeout" from="HurtBox/DamageTimer" to="." method="_on_damage_timer_timeout"]

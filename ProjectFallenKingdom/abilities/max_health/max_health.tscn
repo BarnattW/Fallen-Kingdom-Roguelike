@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c45xo3rti32bb"]
+
+[ext_resource type="Script" path="res://ProjectFallenKingdom/abilities/max_health/max_health.gd" id="1_1t327"]
+
+[node name="MaxHealth" type="Node2D"]
+script = ExtResource("1_1t327")

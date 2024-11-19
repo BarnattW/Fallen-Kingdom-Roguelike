@@ -24,8 +24,8 @@ func exec(player: Player) -> void:
 		return
 		
 	# Start the dash
-	var cursor_position = get_viewport().get_mouse_position()
-	var world_cursor_position = player.get_global_mouse_position()
+	var cursor_position : Vector2 = get_viewport().get_mouse_position()
+	var world_cursor_position : Vector2 = player.get_global_mouse_position()
 	dash_direction = (world_cursor_position - player.position).normalized()
 
 	get_parent().is_dashing = true

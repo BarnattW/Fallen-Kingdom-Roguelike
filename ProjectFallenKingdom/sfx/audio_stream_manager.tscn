@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0jibp5ray0br"]
+
+[ext_resource type="Script" path="res://ProjectFallenKingdom/sfx/audio_stream_manager.gd" id="1_k3vp3"]
+
+[node name="AudioStreamManager" type="Node"]
+process_mode = 3
+script = ExtResource("1_k3vp3")

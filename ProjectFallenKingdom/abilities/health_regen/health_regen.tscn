@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dg16njw0ydvsu"]
+
+[ext_resource type="Script" path="res://ProjectFallenKingdom/abilities/health_regen/health_regen.gd" id="1_0pi1t"]
+
+[node name="HealthRegen" type="Node2D"]
+script = ExtResource("1_0pi1t")
+
+[node name="HealTimer" type="Timer" parent="."]

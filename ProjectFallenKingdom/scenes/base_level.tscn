@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ri6nwrsik5n"]
+[gd_scene load_steps=7 format=3 uid="uid://ri6nwrsik5n"]
 
 [ext_resource type="Script" path="res://ProjectFallenKingdom/scenes/base_level.gd" id="1_triiw"]
 [ext_resource type="PackedScene" uid="uid://b1nvsond6tdnt" path="res://ProjectFallenKingdom/characters/player/player_fengyue.tscn" id="2_p55ry"]
+[ext_resource type="PackedScene" uid="uid://doiohpinkrnop" path="res://ProjectFallenKingdom/characters/enemies/EnemySpawner.tscn" id="2_vtnwa"]
 [ext_resource type="PackedScene" uid="uid://cqsq14m7ix8xh" path="res://ProjectFallenKingdom/environment/pine_tree.tscn" id="2_wdy26"]
 [ext_resource type="PackedScene" uid="uid://dl4wf4traisys" path="res://ProjectFallenKingdom/ui/player_ui.tscn" id="4_2hg4k"]
 
@@ -14,6 +15,8 @@ point_count = 7
 [node name="Base Level" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_triiw")
+
+[node name="EnemySpawner" parent="." instance=ExtResource("2_vtnwa")]
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1
@@ -43,7 +46,7 @@ position = Vector2(301, 260)
 position = Vector2(1377, 909)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 5.0
 autostart = true
 
 [node name="GameOver" type="CanvasLayer" parent="."]
@@ -84,10 +87,12 @@ offset_bottom = 758.0
 text = "Replay"
 
 [node name="PlayerUi" parent="." instance=ExtResource("4_2hg4k")]
+unique_name_in_owner = true
 
 [connection signal="exp_changed" from="Player" to="PlayerUi" method="_on_player_exp_changed"]
 [connection signal="health_changed" from="Player" to="PlayerUi" method="_on_player_health_changed"]
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="leveled_up" from="Player" to="PlayerUi" method="_on_player_leveled_up"]
+[connection signal="max_health_changed" from="Player" to="PlayerUi" method="_on_player_max_health_changed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="button_down" from="GameOver/Button" to="." method="_on_button_button_down"]

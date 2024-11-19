@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://ww4b5m3e4m6r"]
+
+[ext_resource type="Texture2D" uid="uid://do5evivgfvdkl" path="res://ProjectFallenKingdom/level_up/coin.png" id="1_gh87t"]
+[ext_resource type="Script" path="res://ProjectFallenKingdom/abilities/magic_circle/magic_circle_attack.gd" id="1_p2jen"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_os8xo"]
+radius = 420.119
+
+[node name="MagicCircleAttack" type="Area2D"]
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("1_p2jen")
+SPEED = null
+RANGE = null
+DAMAGE = null
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_gh87t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_os8xo")
+
+[node name="DamageTickTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

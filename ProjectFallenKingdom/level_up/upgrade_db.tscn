@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dy8rbbcn5a7tg"]
+
+[ext_resource type="Script" path="res://ProjectFallenKingdom/level_up/upgrade_db.gd" id="1_tc70g"]
+
+[node name="UpgradeDb" type="Node"]
+script = ExtResource("1_tc70g")

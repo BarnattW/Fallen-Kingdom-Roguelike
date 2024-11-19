@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://doiohpinkrnop"]
+
+[ext_resource type="Script" path="res://ProjectFallenKingdom/characters/enemies/enemy_spawner.gd" id="1_l13ek"]
+[ext_resource type="Script" path="res://ProjectFallenKingdom/characters/enemies/spawn_info.gd" id="2_qsy10"]
+[ext_resource type="PackedScene" uid="uid://cp6n4hdexpuwo" path="res://ProjectFallenKingdom/characters/enemies/wisp_enemy.tscn" id="3_dujc8"]
+[ext_resource type="PackedScene" uid="uid://b0rp3223t2lh2" path="res://ProjectFallenKingdom/characters/enemies/strong_wisp_enemy.tscn" id="4_g03a8"]
+
+[sub_resource type="Resource" id="Resource_5b0nb"]
+script = ExtResource("2_qsy10")
+time_start = 0
+time_end = 60
+enemy = ExtResource("3_dujc8")
+enemy_num = 1
+enemy_spawn_delay = 0
+
+[sub_resource type="Resource" id="Resource_ox58w"]
+script = ExtResource("2_qsy10")
+time_start = 60
+time_end = 300
+enemy = ExtResource("3_dujc8")
+enemy_num = 8
+enemy_spawn_delay = 1
+
+[sub_resource type="Resource" id="Resource_ban12"]
+script = ExtResource("2_qsy10")
+time_start = 120
+time_end = 1200
+enemy = ExtResource("4_g03a8")
+enemy_num = 6
+enemy_spawn_delay = 1
+
+[node name="EnemySpawner" type="Node2D"]
+script = ExtResource("1_l13ek")
+spawn_types = Array[ExtResource("2_qsy10")]([SubResource("Resource_5b0nb"), SubResource("Resource_ox58w"), SubResource("Resource_ban12")])
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://0kmfr6qpwgwl"]
+
+[ext_resource type="AudioStream" uid="uid://cmwr33qysbngn" path="res://ProjectFallenKingdom/background_music/to_the_shining_sky-241513.mp3" id="1_dcj74"]
+
+[node name="BackgroundMusic" type="AudioStreamPlayer"]
+process_mode = 3
+stream = ExtResource("1_dcj74")
+autoplay = true
+parameters/looping = true
