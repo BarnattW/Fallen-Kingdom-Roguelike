@@ -43,6 +43,7 @@ func _on_cresent_cooldown_timer_timeout() -> void:
 	exec(owning_entity)
 
 func add_attack(new_attack : Projectile) -> void:
+	# Potential bug when spawning a new attack
 	if is_instance_valid(new_attack):
 		add_child(new_attack)
 	else:

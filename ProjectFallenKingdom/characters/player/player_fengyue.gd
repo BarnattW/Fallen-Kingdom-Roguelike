@@ -30,8 +30,8 @@ func _read_input():
 		if direction.x != 0:
 			last_horizontal_dir = 1 if direction.x > 0 else -1
 	
-	if Input.is_action_just_pressed("ability_1"):
-		crescent_strike.exec(self);
+	#if Input.is_action_just_pressed("ability_1"):
+		#crescent_strike.exec(self);
 
 func _physics_process(delta: float) -> void:
 	_read_input()
