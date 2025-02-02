@@ -1,4 +1,4 @@
-A small survivors roguelike made with Godot Engine and GDScript. 
+A small survivors roguelike made with Godot Engine and GDScript. There are currently no plans to expand on this project. 
 
 ## Features
 - Simple Combat: Your character automatically attacks enemies, all you have to do is move
@@ -12,5 +12,9 @@ Controls:
 Download:
 https://chii-yeh.itch.io/fallen-kingdom-roguelike
 
-Demo:
-TO-DO
+Demo: </br>
+[![Game Demo](https://img.youtube.com/vi/at-H1Ov-YJ4/0.jpg)](https://youtu.be/at-H1Ov-YJ4)
+
+Development
+- Game Engine: Godot
+- Programming Language: GDScript
